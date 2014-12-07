@@ -9,10 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+   
+    @IBOutlet weak var imageView: UIImageView!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let myProfilePictureURL = NSURL(string: "http://graph.facebook.com/bobdylan/picture")
+        let imageData = NSData(contentsOfURL: myProfilePictureURL!)
+        self.imageView.image = UIImage(data: imageData!)
+        
     }
 
     override func didReceiveMemoryWarning() {
